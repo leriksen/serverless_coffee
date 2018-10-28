@@ -1,8 +1,13 @@
-class @Person
+module.exports = class @Person
+
+    counter = 0
     constructor: (@name) ->
+        counter += 1
 
     talk: (message) ->
         message2 = message + ' '
         console.log message2 + @name
 
-module.exports=@Person
+    @instances: () ->
+        console.log 'there are ' + counter + ' instances'
+
